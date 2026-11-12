@@ -863,7 +863,7 @@
   const SBYUVA_MAILING_LIST = 'https://forms.gle/Q5VVAhQhBaez3tDZ7';
   // The subscription feed. This file is what subscribers' calendars read, so it should be kept in
   // sync whenever sbyuvaEvents changes (open this page with #snyp-admin to download it).
-  const sbyuvaIcsUrl = new URL('snyp-calendar.ics', window.location.href).toString();
+  const sbyuvaIcsUrl = 'https://appadamofmyeye.github.io/sb_yuva_google_sites/snyp-calendar.ics';
   let currentEvent = null;
 
   function sbyuvaToast(msg) {
@@ -953,7 +953,6 @@
         'X-WR-CALNAME:' + sbyuvaEscapeIcs(SBYUVA_CALENDAR_NAME),
         'X-WR-TIMEZONE:' + SBYUVA_TZ,
         'X-WR-CALDESC:Samskritam Network for Young Professionals (SNYP) sessions.',
-        // Ask Apple / Outlook to re-check the feed twice a day (Google refreshes on its own schedule)
         'REFRESH-INTERVAL;VALUE=DURATION:PT12H',
         'X-PUBLISHED-TTL:PT12H'
       );
@@ -982,7 +981,6 @@
       const summary = sbyuvaEscapeIcs(sbyuvaSummary(ev));
       lines.push(
         'BEGIN:VEVENT',
-        // UID is based on the date: keep it stable so existing subscribers don't get duplicates
         'UID:snyp-' + ev.date.replace(/-/g, '') + '@sbyuva.org',
         'DTSTAMP:' + now,
         'DTSTART;TZID=America/New_York:' + sbyuvaStamp(ev.date, ev.start),
@@ -1007,7 +1005,7 @@
       lines.push('END:VEVENT');
     });
     lines.push('END:VCALENDAR');
-    return lines.map(sbyuvaFoldLine).join(String.fromCharCode(13, 10)) + String.fromCharCode(13, 10);
+    return lines.map(l => sbyuvaFoldLine(l)).join('\r\n');
   }
 
   function sbyuvaDownload(filename, content) {
@@ -1016,69 +1014,55 @@
     const link = document.createElement('a');
     link.href = url;
     link.download = filename;
-    link.target = '_self';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
-  // Fill in defaults and sort by date
-  sbyuvaEvents.forEach(ev => {
-    ev.start = ev.start || SBYUVA_DEFAULT_START;
-    ev.end = ev.end || SBYUVA_DEFAULT_END;
-    ev.timeText = ev.timeText || SBYUVA_DEFAULT_TIME_TEXT;
-    const p = sbyuvaParts(ev.date);
-    ev.shortDate = p.utc.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
-    ev.dateText = p.utc.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
-  });
-  sbyuvaEvents.sort((a, b) => a.date.localeCompare(b.date));
-
-  // Build the cards
   (function renderCards() {
     const grid = document.getElementById('sbyuva-calendar-grid');
-    const now = new Date();
-    const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
-    let nextMarked = false;
-
-    sbyuvaEvents.forEach((ev, i) => {
-      const isPast = ev.date < todayStr;
-      const isNext = !isPast && !nextMarked;
-      if (isNext) nextMarked = true;
-
+    const today = new Date();
+    sbyuvaEvents.forEach((ev, index) => {
       const card = document.createElement('div');
-      card.className = 'sbyuva-calendar-card' + (isPast ? ' is-past' : '') + (isNext ? ' is-next' : '');
+      card.className = 'sbyuva-calendar-card';
       card.setAttribute('role', 'button');
       card.setAttribute('tabindex', '0');
-      card.innerHTML =
-        (isNext ? '<span class="sbyuva-card-badge">Up next</span>' : '') +
-        (isPast ? '<span class="sbyuva-card-badge past">Done</span>' : '') +
-        '<div>' +
-          '<div class="sbyuva-card-date">' + sbyuvaEscapeHtml(ev.shortDate) + '</div>' +
-          '<h3 class="sbyuva-card-title">' + sbyuvaEscapeHtml(ev.title) + '</h3>' +
-          (ev.lead ? '<p class="sbyuva-card-lead">with ' + sbyuvaEscapeHtml(ev.lead) + '</p>' : '<p class="sbyuva-card-lead">&nbsp;</p>') +
-        '</div>' +
-        '<div class="sbyuva-card-click-tip"><span>Details</span> <span>→</span></div>';
-      card.addEventListener('click', () => openEventModal(i, card));
-      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEventModal(i, card); } });
+      const date = new Date(ev.date + 'T00:00:00');
+      const isPast = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      if (isPast) card.classList.add('is-past');
+      const cardDate = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' }).format(date);
+      card.innerHTML = `
+        <div class="sbyuva-card-badge ${isPast ? 'past' : ''}">${isPast ? 'Past' : 'Next'}</div>
+        <div class="sbyuva-card-date">${cardDate}</div>
+        <div>
+          <h3 class="sbyuva-card-title">${ev.title}</h3>
+          ${ev.lead ? `<p class="sbyuva-card-lead">with ${ev.lead}</p>` : ''}
+        </div>
+        <div class="sbyuva-card-click-tip"><span>Details</span> <span>→</span></div>
+      `;
+      card.addEventListener('click', () => openEventModal(index, card));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openEventModal(index, card);
+        }
+      });
       grid.appendChild(card);
     });
   })();
 
-  // Maintainer tool: the full feed file to upload to GitHub as snyp-calendar.ics
   function downloadFullICS() {
     sbyuvaDownload('snyp-calendar.ics', sbyuvaBuildICS(sbyuvaEvents, { feed: true }));
     sbyuvaToast('Downloaded snyp-calendar.ics. Upload it to GitHub to update subscribers.');
   }
 
-  // Subscribe buttons. All of these point at the hosted feed, so calendars stay in sync.
   (function setupSubscribe() {
     const webcalUrl = sbyuvaIcsUrl.replace(/^https?:/, 'webcal:');
 
     document.getElementById('sbyuva-sub-google').href =
       'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(webcalUrl);
 
-    // Apple: webcal:// opens Calendar's "Subscribe" prompt on iPhone, iPad and Mac
     document.getElementById('sbyuva-sub-apple').href = webcalUrl;
 
     const outlookQuery = '?url=' + encodeURIComponent(sbyuvaIcsUrl) + '&name=' + encodeURIComponent(SBYUVA_CALENDAR_NAME);
@@ -1087,7 +1071,6 @@
 
     document.getElementById('sbyuva-sub-url-input').value = sbyuvaIcsUrl;
 
-    // Google Sites embeds may block clipboard access, so also show the link for manual copying
     document.getElementById('sbyuva-sub-copy').addEventListener('click', () => {
       const box = document.getElementById('sbyuva-sub-url');
       const input = document.getElementById('sbyuva-sub-url-input');
@@ -1107,7 +1090,6 @@
     });
   })();
 
-  // Maintainer panel: open the page with #snyp-admin to see it. Compares the live feed with sbyuvaEvents.
   (function setupAdmin() {
     if (!/snyp-admin/.test(location.hash + location.search)) return;
     document.getElementById('sbyuva-admin').classList.add('show');
@@ -1122,43 +1104,31 @@
         const missing = page.filter(x => !live.includes(x));
         const extra = live.filter(x => !page.includes(x));
         status.textContent = (missing.length || extra.length)
-          ? '⚠ Live feed is OUT OF DATE.\nOn this page but not in feed: ' + (missing.join(', ') || 'none') +
-            '\nIn feed but not on this page: ' + (extra.join(', ') || 'none') +
-            '\n(Titles/descriptions are not compared — re-upload after any edit.)'
-          : '✓ Live feed has the same ' + live.length + ' session dates/times as this page.\n(Titles/descriptions are not compared — re-upload after any edit.)';
+          ? 'Live feed is OUT OF DATE.\nOn this page but not in feed: ' + (missing.join(', ') || 'none') + '\nIn feed but not on this page: ' + (extra.join(', ') || 'none') + '\n(Title/description not compared here; re-upload after any edit.)'
+          : 'Live feed matches this page.';
       })
-      .catch(err => { status.textContent = 'Could not read the live feed (' + err.message + ').'; });
+      .catch(err => {
+        status.textContent = 'Could not read the live feed (' + err.message + ').';
+      });
   })();
 
   function openEventModal(index, cardEl) {
     const event = sbyuvaEvents[index];
     currentEvent = event;
-
-    document.getElementById('modal-date').innerText = event.dateText;
-    document.getElementById('modal-title').innerText = event.title;
-    const descEl = document.getElementById('modal-desc');
-    descEl.innerText = event.desc || '';
-    descEl.style.display = event.desc ? '' : 'none';
-    document.getElementById('modal-time').innerText = event.timeText;
-    document.getElementById('modal-lead').innerText = event.lead || '';
-    document.getElementById('modal-lead-row').style.display = event.lead ? '' : 'none';
-    document.getElementById('modal-google-btn').href = sbyuvaGoogleLink(event);
-
-    // Google Sites puts this page in an iframe that can be much taller than the screen, so a
-    // vertically-centred popup can open out of view. Open it next to the clicked card instead.
     const modal = document.getElementById('sbyuva-event-modal');
-    const content = modal.querySelector('.sbyuva-modal-content');
-    modal.style.height = '0px';
-    const docH = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
-    modal.style.height = docH + 'px';
-    const r = cardEl ? cardEl.getBoundingClientRect() : { top: 40, height: 0 };
-    const cardMid = r.top + window.scrollY + r.height / 2;
-    const top = Math.max(20, Math.min(cardMid - content.offsetHeight / 2, docH - content.offsetHeight - 20));
-    content.style.marginTop = top + 'px';
-
+    document.getElementById('modal-date').textContent = event.date;
+    document.getElementById('modal-title').textContent = event.title;
+    document.getElementById('modal-desc').textContent = event.desc || '';
+    document.getElementById('modal-time').textContent = event.timeText || SBYUVA_DEFAULT_TIME_TEXT;
+    const leadRow = document.getElementById('modal-lead-row');
+    const leadEl = document.getElementById('modal-lead');
+    leadEl.textContent = event.lead || '';
+    leadRow.style.display = event.lead ? '' : 'none';
+    document.getElementById('modal-google-btn').href = sbyuvaGoogleLink(event);
     modal.classList.add('active');
-    // If the popup still pokes past the edge of the screen, scroll the outer page to it
-    try { content.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {}
+    const rect = cardEl ? cardEl.getBoundingClientRect() : { top: 40, height: 0 };
+    const top = Math.max(20, rect.top + window.scrollY + rect.height / 2 - 180);
+    document.querySelector('.sbyuva-modal-content').style.marginTop = top + 'px';
   }
 
   function closeEventModal() {
@@ -1166,15 +1136,12 @@
     currentEvent = null;
   }
 
-  // Single-session .ics (one-time import, includes 1-day and 1-hour reminders)
   function downloadICS() {
     if (!currentEvent) return;
-    const ev = currentEvent;
-    sbyuvaDownload('SNYP_' + ev.title.replace(/[^a-z0-9]+/gi, '_') + '.ics', sbyuvaBuildICS([ev], { feed: false }));
-    sbyuvaToast('Downloaded session invite! Open it to add to your calendar.');
+    sbyuvaDownload('SNYP-' + currentEvent.date + '.ics', sbyuvaBuildICS([currentEvent], { feed: false }));
+    sbyuvaToast('Downloaded session invite.');
   }
 
-  // Close modal on click outside content, or with Escape
   window.addEventListener('click', function (event) {
     if (event.target === document.getElementById('sbyuva-event-modal')) closeEventModal();
   });
