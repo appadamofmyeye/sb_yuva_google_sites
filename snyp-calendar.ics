@@ -1,0 +1,269 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Samskrita Bharati USA//SNYP Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:SNYP - Samskrita Bharati Yuvagana
+X-WR-TIMEZONE:America/New_York
+X-WR-CALDESC:Samskritam Network for Young Professionals (SNYP) sessions.
+BEGIN:VTIMEZONE
+TZID:America/New_York
+X-LIC-LOCATION:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:snyp-20261024@sbyuva.org
+DTSTAMP:20261112T031839Z
+DTSTART;TZID=America/New_York:20261024T200000
+DTEND;TZID=America/New_York:20261024T210000
+SUMMARY:SNYP: Share and Tell: Subhāṣitam (Vishnupriya P.)
+DESCRIPTION:Bring your favorite subhāṣitam to read and share with the group. Extra points if you can share the tātparyam in simple words!
+
+Facilitator: Vishnupriya P.
+Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
+Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
+https://yuva.samskritabharatiusa.org/connect/snyp
+LOCATION:Online (Zoom)
+URL:https://yuva.samskritabharatiusa.org/connect/snyp
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Share and Tell: Subhāṣitam (Vishnupriya P.) is tomorrow
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Share and Tell: Subhāṣitam (Vishnupriya P.) starts in 1 hour
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:snyp-20261121@sbyuva.org
+DTSTAMP:20261112T031839Z
+DTSTART;TZID=America/New_York:20261121T200000
+DTEND;TZID=America/New_York:20261121T210000
+SUMMARY:SNYP: Story Reading (Sahana C.)
+DESCRIPTION:Our facilitator will bring a story for all of us to take turns reading and discussing together!
+
+Facilitator: Sahana C.
+Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
+Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
+https://yuva.samskritabharatiusa.org/connect/snyp
+LOCATION:Online (Zoom)
+URL:https://yuva.samskritabharatiusa.org/connect/snyp
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Story Reading (Sahana C.) is tomorrow
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Story Reading (Sahana C.) starts in 1 hour
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:snyp-20261220@sbyuva.org
+DTSTAMP:20261112T031839Z
+DTSTART;TZID=America/New_York:20261220T200000
+DTEND;TZID=America/New_York:20261220T210000
+SUMMARY:SNYP: Anvayakramaḥ (Siddharth K.)
+DESCRIPTION:Our facilitator will bring selected ślokas and walk through the anvayakramaḥ for each. Feel free to bring your own śloka for the group to work on if time permits!
+
+Facilitator: Siddharth K.
+Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
+Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
+https://yuva.samskritabharatiusa.org/connect/snyp
+LOCATION:Online (Zoom)
+URL:https://yuva.samskritabharatiusa.org/connect/snyp
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Anvayakramaḥ (Siddharth K.) is tomorrow
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Anvayakramaḥ (Siddharth K.) starts in 1 hour
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:snyp-20270116@sbyuva.org
+DTSTAMP:20261112T031839Z
+DTSTART;TZID=America/New_York:20270116T200000
+DTEND;TZID=America/New_York:20270116T210000
+SUMMARY:SNYP: Something Special: Saṅkrānti (Yashwanth G.)
+DESCRIPTION:Let’s bring a few thoughts and reflections (in Saṃskṛtam) to celebrate and share about Saṅkrānti!
+
+Facilitator: Yashwanth G.
+Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
+Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
+https://yuva.samskritabharatiusa.org/connect/snyp
+LOCATION:Online (Zoom)
+URL:https://yuva.samskritabharatiusa.org/connect/snyp
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Something Special: Saṅkrānti (Yashwanth G.) is tomorrow
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Something Special: Saṅkrānti (Yashwanth G.) starts in 1 hour
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:snyp-20270220@sbyuva.org
+DTSTAMP:20261112T031839Z
+DTSTART;TZID=America/New_York:20270220T200000
+DTEND;TZID=America/New_York:20270220T210000
+SUMMARY:SNYP: Member Speaks: Śilpaśāstram (Mythreyi R.)
+DESCRIPTION:An engaging member presentation exploring the fascinating world and principles of Śilpaśāstra!
+
+Facilitator: Mythreyi R.
+Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
+Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
+https://yuva.samskritabharatiusa.org/connect/snyp
+LOCATION:Online (Zoom)
+URL:https://yuva.samskritabharatiusa.org/connect/snyp
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Member Speaks: Śilpaśāstram (Mythreyi R.) is tomorrow
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Member Speaks: Śilpaśāstram (Mythreyi R.) starts in 1 hour
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:snyp-20270320@sbyuva.org
+DTSTAMP:20261112T031839Z
+DTSTART;TZID=America/New_York:20270320T200000
+DTEND;TZID=America/New_York:20270320T210000
+SUMMARY:SNYP: Sarala-sambhāṣaṇam (Naisargi J.)
+DESCRIPTION:Our facilitator will bring an interactive prompt for members to build conversation and dialogue upon.
+
+Facilitator: Naisargi J.
+Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
+Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
+https://yuva.samskritabharatiusa.org/connect/snyp
+LOCATION:Online (Zoom)
+URL:https://yuva.samskritabharatiusa.org/connect/snyp
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Sarala-sambhāṣaṇam (Naisargi J.) is tomorrow
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Sarala-sambhāṣaṇam (Naisargi J.) starts in 1 hour
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:snyp-20270417@sbyuva.org
+DTSTAMP:20261112T031839Z
+DTSTART;TZID=America/New_York:20270417T200000
+DTEND;TZID=America/New_York:20270417T210000
+SUMMARY:SNYP: Member Speaks: Fitness (Samir P.)
+DESCRIPTION:An interactive member presentation and discussion on health, well-being, and fitness in Saṃskṛtam!
+
+Facilitator: Samir P.
+Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
+Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
+https://yuva.samskritabharatiusa.org/connect/snyp
+LOCATION:Online (Zoom)
+URL:https://yuva.samskritabharatiusa.org/connect/snyp
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Member Speaks: Fitness (Samir P.) is tomorrow
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Member Speaks: Fitness (Samir P.) starts in 1 hour
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:snyp-20270522@sbyuva.org
+DTSTAMP:20261112T031839Z
+DTSTART;TZID=America/New_York:20270522T200000
+DTEND;TZID=America/New_York:20270522T210000
+SUMMARY:SNYP: Describe a Movie in Saṃskṛtam (TBD)
+DESCRIPTION:Bring a short 4–5 line spoiler-free summary (in Saṃskṛtam) of a favorite movie for other members to guess!
+
+Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
+Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
+https://yuva.samskritabharatiusa.org/connect/snyp
+LOCATION:Online (Zoom)
+URL:https://yuva.samskritabharatiusa.org/connect/snyp
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Describe a Movie in Saṃskṛtam (TBD) is tomorrow
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Describe a Movie in Saṃskṛtam (TBD) starts in 1 hour
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:snyp-20270619@sbyuva.org
+DTSTAMP:20261112T031839Z
+DTSTART;TZID=America/New_York:20270619T200000
+DTEND;TZID=America/New_York:20270619T210000
+SUMMARY:SNYP: Story Train (Bhairav P.)
+DESCRIPTION:Our facilitator will kick off with an opening prompt. Members will each take turns adding a line to keep the story train rolling forward!
+
+Facilitator: Bhairav P.
+Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
+Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
+https://yuva.samskritabharatiusa.org/connect/snyp
+LOCATION:Online (Zoom)
+URL:https://yuva.samskritabharatiusa.org/connect/snyp
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Story Train (Bhairav P.) is tomorrow
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:Reminder: SNYP: Story Train (Bhairav P.) starts in 1 hour
+END:VALARM
+END:VEVENT
+END:VCALENDAR
