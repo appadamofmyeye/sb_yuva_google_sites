@@ -27,15 +27,10 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:snyp-20261024@sbyuva.org
 DTSTAMP:20261112T031839Z
-DTSTART;TZID=America/New_York:20261024T200000
-DTEND;TZID=America/New_York:20261024T210000
+DTSTART;TZID=America/New_York:20261024T150000
+DTEND;TZID=America/New_York:20261024T153000
 SUMMARY:SNYP: Share and Tell: Subhāṣitam (Vishnupriya P.)
-DESCRIPTION:Bring your favorite subhāṣitam to read and share with the group. Extra points if you can share the tātparyam in simple words!
-
-Facilitator: Vishnupriya P.
-Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
-Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
-https://yuva.samskritabharatiusa.org/connect/snyp
+DESCRIPTION:Bring your favorite subhāṣitam to read and share with the group. Extra points if you can share the tātparyam in simple words!\n\nFacilitator: Vishnupriya P.\nTime: 3:00 – 3:30 PM ET\nZoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7\nhttps://yuva.samskritabharatiusa.org/connect/snyp
 LOCATION:Online (Zoom)
 URL:https://yuva.samskritabharatiusa.org/connect/snyp
 STATUS:CONFIRMED
@@ -54,15 +49,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:snyp-20261121@sbyuva.org
 DTSTAMP:20261112T031839Z
-DTSTART;TZID=America/New_York:20261121T200000
-DTEND;TZID=America/New_York:20261121T210000
+DTSTART;TZID=America/New_York:20261121T150000
+DTEND;TZID=America/New_York:20261121T153000
 SUMMARY:SNYP: Story Reading (Sahana C.)
-DESCRIPTION:Our facilitator will bring a story for all of us to take turns reading and discussing together!
-
-Facilitator: Sahana C.
-Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
-Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
-https://yuva.samskritabharatiusa.org/connect/snyp
+DESCRIPTION:Our facilitator will bring a story for all of us to take turns reading and discussing together!\n\nFacilitator: Sahana C.\nTime: 3:00 – 3:30 PM ET\nZoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7\nhttps://yuva.samskritabharatiusa.org/connect/snyp
 LOCATION:Online (Zoom)
 URL:https://yuva.samskritabharatiusa.org/connect/snyp
 STATUS:CONFIRMED
@@ -81,15 +71,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:snyp-20261220@sbyuva.org
 DTSTAMP:20261112T031839Z
-DTSTART;TZID=America/New_York:20261220T200000
-DTEND;TZID=America/New_York:20261220T210000
+DTSTART;TZID=America/New_York:20261220T150000
+DTEND;TZID=America/New_York:20261220T153000
 SUMMARY:SNYP: Anvayakramaḥ (Siddharth K.)
-DESCRIPTION:Our facilitator will bring selected ślokas and walk through the anvayakramaḥ for each. Feel free to bring your own śloka for the group to work on if time permits!
-
-Facilitator: Siddharth K.
-Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
-Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
-https://yuva.samskritabharatiusa.org/connect/snyp
+DESCRIPTION:Our facilitator will bring selected ślokas and walk through the anvayakramaḥ for each. Feel free to bring your own śloka for the group to work on if time permits!\n\nFacilitator: Siddharth K.\nTime: 3:00 – 3:30 PM ET\nZoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7\nhttps://yuva.samskritabharatiusa.org/connect/snyp
 LOCATION:Online (Zoom)
 URL:https://yuva.samskritabharatiusa.org/connect/snyp
 STATUS:CONFIRMED
@@ -108,15 +93,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:snyp-20270116@sbyuva.org
 DTSTAMP:20261112T031839Z
-DTSTART;TZID=America/New_York:20270116T200000
-DTEND;TZID=America/New_York:20270116T210000
+DTSTART;TZID=America/New_York:20270116T150000
+DTEND;TZID=America/New_York:20270116T153000
 SUMMARY:SNYP: Something Special: Saṅkrānti (Yashwanth G.)
-DESCRIPTION:Let’s bring a few thoughts and reflections (in Saṃskṛtam) to celebrate and share about Saṅkrānti!
-
-Facilitator: Yashwanth G.
-Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
-Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
-https://yuva.samskritabharatiusa.org/connect/snyp
+DESCRIPTION:Let’s bring a few thoughts and reflections (in Saṃskṛtam) to celebrate and share about Saṅkrānti!\n\nFacilitator: Yashwanth G.\nTime: 3:00 – 3:30 PM ET\nZoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7\nhttps://yuva.samskritabharatiusa.org/connect/snyp
 LOCATION:Online (Zoom)
 URL:https://yuva.samskritabharatiusa.org/connect/snyp
 STATUS:CONFIRMED
@@ -135,15 +115,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:snyp-20270220@sbyuva.org
 DTSTAMP:20261112T031839Z
-DTSTART;TZID=America/New_York:20270220T200000
-DTEND;TZID=America/New_York:20270220T210000
+DTSTART;TZID=America/New_York:20270220T150000
+DTEND;TZID=America/New_York:20270220T153000
 SUMMARY:SNYP: Member Speaks: Śilpaśāstram (Mythreyi R.)
-DESCRIPTION:An engaging member presentation exploring the fascinating world and principles of Śilpaśāstra!
-
-Facilitator: Mythreyi R.
-Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
-Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
-https://yuva.samskritabharatiusa.org/connect/snyp
+DESCRIPTION:An engaging member presentation exploring the fascinating world and principles of Śilpaśāstra!\n\nFacilitator: Mythreyi R.\nTime: 3:00 – 3:30 PM ET\nZoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7\nhttps://yuva.samskritabharatiusa.org/connect/snyp
 LOCATION:Online (Zoom)
 URL:https://yuva.samskritabharatiusa.org/connect/snyp
 STATUS:CONFIRMED
@@ -162,15 +137,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:snyp-20270320@sbyuva.org
 DTSTAMP:20261112T031839Z
-DTSTART;TZID=America/New_York:20270320T200000
-DTEND;TZID=America/New_York:20270320T210000
+DTSTART;TZID=America/New_York:20270320T150000
+DTEND;TZID=America/New_York:20270320T153000
 SUMMARY:SNYP: Sarala-sambhāṣaṇam (Naisargi J.)
-DESCRIPTION:Our facilitator will bring an interactive prompt for members to build conversation and dialogue upon.
-
-Facilitator: Naisargi J.
-Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
-Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
-https://yuva.samskritabharatiusa.org/connect/snyp
+DESCRIPTION:Our facilitator will bring an interactive prompt for members to build conversation and dialogue upon.\n\nFacilitator: Naisargi J.\nTime: 3:00 – 3:30 PM ET\nZoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7\nhttps://yuva.samskritabharatiusa.org/connect/snyp
 LOCATION:Online (Zoom)
 URL:https://yuva.samskritabharatiusa.org/connect/snyp
 STATUS:CONFIRMED
@@ -189,15 +159,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:snyp-20270417@sbyuva.org
 DTSTAMP:20261112T031839Z
-DTSTART;TZID=America/New_York:20270417T200000
-DTEND;TZID=America/New_York:20270417T210000
+DTSTART;TZID=America/New_York:20270417T150000
+DTEND;TZID=America/New_York:20270417T153000
 SUMMARY:SNYP: Member Speaks: Fitness (Samir P.)
-DESCRIPTION:An interactive member presentation and discussion on health, well-being, and fitness in Saṃskṛtam!
-
-Facilitator: Samir P.
-Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
-Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
-https://yuva.samskritabharatiusa.org/connect/snyp
+DESCRIPTION:An interactive member presentation and discussion on health, well-being, and fitness in Saṃskṛtam!\n\nFacilitator: Samir P.\nTime: 3:00 – 3:30 PM ET\nZoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7\nhttps://yuva.samskritabharatiusa.org/connect/snyp
 LOCATION:Online (Zoom)
 URL:https://yuva.samskritabharatiusa.org/connect/snyp
 STATUS:CONFIRMED
@@ -216,14 +181,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:snyp-20270522@sbyuva.org
 DTSTAMP:20261112T031839Z
-DTSTART;TZID=America/New_York:20270522T200000
-DTEND;TZID=America/New_York:20270522T210000
+DTSTART;TZID=America/New_York:20270522T150000
+DTEND;TZID=America/New_York:20270522T153000
 SUMMARY:SNYP: Describe a Movie in Saṃskṛtam (TBD)
-DESCRIPTION:Bring a short 4–5 line spoiler-free summary (in Saṃskṛtam) of a favorite movie for other members to guess!
-
-Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
-Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
-https://yuva.samskritabharatiusa.org/connect/snyp
+DESCRIPTION:Bring a short 4–5 line spoiler-free summary (in Saṃskṛtam) of a favorite movie for other members to guess!\n\nTime: 3:00 – 3:30 PM ET\nZoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7\nhttps://yuva.samskritabharatiusa.org/connect/snyp
 LOCATION:Online (Zoom)
 URL:https://yuva.samskritabharatiusa.org/connect/snyp
 STATUS:CONFIRMED
@@ -242,15 +203,10 @@ END:VEVENT
 BEGIN:VEVENT
 UID:snyp-20270619@sbyuva.org
 DTSTAMP:20261112T031839Z
-DTSTART;TZID=America/New_York:20270619T200000
-DTEND;TZID=America/New_York:20270619T210000
+DTSTART;TZID=America/New_York:20270619T150000
+DTEND;TZID=America/New_York:20270619T153000
 SUMMARY:SNYP: Story Train (Bhairav P.)
-DESCRIPTION:Our facilitator will kick off with an opening prompt. Members will each take turns adding a line to keep the story train rolling forward!
-
-Facilitator: Bhairav P.
-Time: 8:00 – 9:00 PM ET (5:00 – 6:00 PM PT)
-Zoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7
-https://yuva.samskritabharatiusa.org/connect/snyp
+DESCRIPTION:Our facilitator will kick off with an opening prompt. Members will each take turns adding a line to keep the story train rolling forward!\n\nFacilitator: Bhairav P.\nTime: 3:00 – 3:30 PM ET\nZoom links are shared only via the SNYP mailing list: https://forms.gle/Q5VVAhQhBaez3tDZ7\nhttps://yuva.samskritabharatiusa.org/connect/snyp
 LOCATION:Online (Zoom)
 URL:https://yuva.samskritabharatiusa.org/connect/snyp
 STATUS:CONFIRMED
@@ -260,7 +216,7 @@ TRIGGER:-P1D
 ACTION:DISPLAY
 DESCRIPTION:Reminder: SNYP: Story Train (Bhairav P.) is tomorrow
 END:VALARM
-BEGIN:VALARM
+BEGIN:VEVENT
 TRIGGER:-PT1H
 ACTION:DISPLAY
 DESCRIPTION:Reminder: SNYP: Story Train (Bhairav P.) starts in 1 hour
