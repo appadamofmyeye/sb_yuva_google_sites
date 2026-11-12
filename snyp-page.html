@@ -1,0 +1,1185 @@
+<meta charset="UTF-8">
+<base target="_blank">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+  .sbyuva-snyp-page {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #475569;
+    background: #F8FAFC;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .sbyuva-snyp-page * {
+    box-sizing: border-box;
+  }
+  .sbyuva-snyp-wrapper {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 24px 20px;
+  }
+  .sbyuva-snyp-hero {
+    position: relative;
+    padding: 64px 28px 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 24px;
+    margin-bottom: 36px;
+    box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.08);
+    background: linear-gradient(135deg, #4281A4 0%, #7F071D 100%);
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .sbyuva-snyp-title {
+    margin: 0;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+  }
+  .sbyuva-snyp-text {
+    margin: 22px auto 0;
+    font-size: 20px;
+    line-height: 1.75;
+    max-width: 760px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .sbyuva-snyp-button-wrap {
+    margin-top: 48px;
+    text-align: center;
+  }
+  .sbyuva-snyp-button {
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 999px;
+    background: #4281A4;
+    color: #FFFFFF !important;
+    font-weight: 800;
+    font-size: 16px;
+    text-decoration: none !important;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .sbyuva-snyp-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.15);
+    background: #316685;
+  }
+  .sbyuva-snyp-features-section {
+    padding: 48px 36px;
+    border-radius: 24px;
+    background: #FFFFFF;
+    box-shadow: 0 10px 40px -10px rgba(127, 7, 29, 0.08);
+  }
+  .sbyuva-snyp-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .sbyuva-snyp-feature {
+    padding: 32px 24px;
+    border-radius: 20px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    text-align: center;
+    color: #475569;
+    font-size: 16px;
+    line-height: 1.7;
+    transition: transform 0.3s ease;
+  }
+  .sbyuva-snyp-feature:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+  }
+  .sbyuva-snyp-feature strong {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 21px;
+    color: #7F071D;
+    font-weight: 800;
+  }
+  @media (max-width: 900px) {
+    .sbyuva-snyp-features {
+      grid-template-columns: 1fr;
+    }
+    .sbyuva-snyp-hero {
+      padding: 48px 24px;
+    }
+  }
+  /* Section Styling */
+  .sbyuva-snyp-section {
+    margin-top: 36px;
+    padding: 48px 36px;
+    border-radius: 24px;
+    background: #FFFFFF;
+    box-shadow: 0 10px 40px -10px rgba(127, 7, 29, 0.08);
+  }
+  .sbyuva-snyp-section-title {
+    margin: 0 0 12px;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #7F071D;
+    font-weight: 800;
+  }
+  .sbyuva-snyp-section-subtitle {
+    margin: 0 0 32px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #64748B;
+  }
+  /* Notice Banner Styling */
+  .sbyuva-calendar-notice {
+    display: flex;
+    gap: 16px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    background: rgba(66, 129, 164, 0.06);
+    border: 1px solid rgba(66, 129, 164, 0.15);
+    margin-bottom: 24px;
+    align-items: center;
+    text-align: left;
+  }
+  .sbyuva-notice-icon {
+    font-size: 24px;
+    color: #4281A4;
+    line-height: 1;
+  }
+  .sbyuva-notice-text {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #334155;
+  }
+  .sbyuva-notice-text strong {
+    color: #0F172A;
+  }
+  .sbyuva-notice-text a {
+    color: #4281A4;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  .sbyuva-notice-text a:hover {
+    color: #316685;
+  }
+
+  /* ===== Subscribe panel ===== */
+  .sbyuva-subscribe {
+    position: relative;
+    padding: 24px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(66, 129, 164, 0.06) 0%, rgba(127, 7, 29, 0.05) 100%);
+    border: 1px solid #E2E8F0;
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+  .sbyuva-subscribe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #4281A4, #7F071D);
+  }
+  .sbyuva-subscribe-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .sbyuva-subscribe-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .sbyuva-live-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(66, 129, 164, 0.12);
+    color: #316685;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .sbyuva-live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4281A4;
+    animation: sbyuva-pulse 1.8s infinite;
+  }
+  @keyframes sbyuva-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(66, 129, 164, 0.6); }
+    70% { box-shadow: 0 0 0 7px rgba(66, 129, 164, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(66, 129, 164, 0); }
+  }
+  .sbyuva-subscribe-text {
+    margin: 0 0 18px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #475569;
+  }
+  .sbyuva-subscribe-btns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .sbyuva-sub-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none !important;
+    cursor: pointer;
+    border: 1px solid #E2E8F0;
+    background: #FFFFFF;
+    color: #0F172A !important;
+    transition: all 0.2s ease;
+  }
+  .sbyuva-sub-btn:hover {
+    transform: translateY(-1px);
+    border-color: rgba(66, 129, 164, 0.4);
+    box-shadow: 0 6px 16px rgba(66, 129, 164, 0.15);
+  }
+  .sbyuva-sub-btn.primary {
+    background: #4281A4;
+    border-color: #4281A4;
+    color: #FFFFFF !important;
+  }
+  .sbyuva-sub-btn.primary:hover {
+    background: #316685;
+  }
+  .sbyuva-sub-url {
+    display: none;
+    margin-top: 12px;
+  }
+  .sbyuva-sub-url.show {
+    display: block;
+  }
+  .sbyuva-sub-url input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #E2E8F0;
+    background: #FFFFFF;
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 12px;
+    color: #316685;
+  }
+  .sbyuva-sub-url small {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #64748B;
+  }
+  .sbyuva-reminders {
+    margin-top: 16px;
+  }
+  .sbyuva-reminders summary {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    color: #4281A4;
+    list-style: none;
+  }
+  .sbyuva-reminders summary::-webkit-details-marker { display: none; }
+  .sbyuva-reminders summary::after { content: ' ▾'; }
+  .sbyuva-reminders[open] summary::after { content: ' ▴'; }
+  .sbyuva-reminders-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .sbyuva-reminder-card {
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #475569;
+  }
+  .sbyuva-reminder-card strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: #7F071D;
+  }
+  .sbyuva-reminder-card ol {
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  /* Calendar Grid Styling */
+  .sbyuva-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .sbyuva-calendar-card {
+    position: relative;
+    padding: 32px 24px 24px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F4F9FC 100%);
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 4px 20px -5px rgba(66, 129, 164, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    text-align: center;
+  }
+  .sbyuva-calendar-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #4281A4, #7F071D);
+    opacity: 0.8;
+    transition: height 0.25s ease;
+  }
+  .sbyuva-calendar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -10px rgba(66, 129, 164, 0.15);
+    border-color: rgba(66, 129, 164, 0.25);
+    background: linear-gradient(135deg, #FFFFFF 0%, #EBF5FA 100%);
+  }
+  .sbyuva-calendar-card:hover::before {
+    height: 6px;
+  }
+  .sbyuva-calendar-card.is-past {
+    opacity: 0.55;
+  }
+  .sbyuva-calendar-card.is-next {
+    border-color: rgba(127, 7, 29, 0.3);
+    box-shadow: 0 12px 30px -10px rgba(127, 7, 29, 0.18);
+  }
+  .sbyuva-card-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: #7F071D;
+    color: #FFFFFF;
+  }
+  .sbyuva-card-badge.past {
+    background: #E2E8F0;
+    color: #64748B;
+  }
+  .sbyuva-card-date {
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #4281A4;
+    margin-bottom: 14px;
+  }
+  .sbyuva-card-title {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.4;
+  }
+  .sbyuva-card-lead {
+    margin: 0 0 16px;
+    font-size: 14px;
+    color: #64748B;
+  }
+  .sbyuva-card-click-tip {
+    font-size: 12px;
+    font-weight: 600;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+  }
+  .sbyuva-calendar-card:hover .sbyuva-card-click-tip {
+    color: #4281A4;
+  }
+  /* Modal Dialog Styling */
+  .sbyuva-modal, .sbyuva-modal *, .sbyuva-toast { box-sizing: border-box; }
+  .sbyuva-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  .sbyuva-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .sbyuva-modal-content {
+    background: #FFFFFF;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    padding: 32px;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border-top: 6px solid #4281A4;
+    text-align: left;
+  }
+  .sbyuva-modal.active .sbyuva-modal-content {
+    transform: translateY(0);
+  }
+  .sbyuva-modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #F1F5F9;
+    border: none;
+    color: #64748B;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .sbyuva-modal-close-btn:hover {
+    background: #E2E8F0;
+    color: #0F172A;
+  }
+  .sbyuva-modal-date {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #4281A4;
+    margin-bottom: 8px;
+  }
+  .sbyuva-modal-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 16px;
+    line-height: 1.3;
+    padding-right: 40px;
+  }
+  .sbyuva-modal-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 24px;
+  }
+  .sbyuva-modal-meta-grid {
+    background: #F8FAFC;
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    border: 1px solid #F1F5F9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sbyuva-modal-meta-row {
+    font-size: 14px;
+    color: #475569;
+  }
+  .sbyuva-modal-meta-row strong {
+    color: #0F172A;
+  }
+  .sbyuva-modal-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  /* Calendar Buttons */
+  .sbyuva-ical-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: #4281A4;
+    color: #FFFFFF !important;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none !important;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(66, 129, 164, 0.15);
+    transition: all 0.2s ease;
+  }
+  .sbyuva-ical-btn:hover {
+    background: #316685;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(66, 129, 164, 0.2);
+  }
+  .sbyuva-ical-btn.secondary {
+    background: #FFFFFF;
+    color: #4281A4 !important;
+    border: 1px solid rgba(66, 129, 164, 0.35);
+    box-shadow: none;
+  }
+  .sbyuva-ical-btn.secondary:hover {
+    background: rgba(66, 129, 164, 0.06);
+  }
+  .sbyuva-modal-zoom-tip {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #64748B;
+    text-align: center;
+  }
+  .sbyuva-modal-zoom-tip a {
+    color: #4281A4;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  .sbyuva-admin {
+    display: none;
+    margin-top: 24px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: 1px dashed #7F071D;
+    background: #FFF7F8;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #334155;
+  }
+  .sbyuva-admin.show { display: block; }
+  .sbyuva-admin button { margin-top: 10px; width: auto; }
+  .sbyuva-admin pre { white-space: pre-wrap; font-size: 12px; margin: 10px 0 0; }
+  .sbyuva-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translate(-50%, 80px);
+    padding: 12px 20px;
+    border-radius: 12px;
+    background: #0F172A;
+    color: #FFFFFF;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10000;
+  }
+  .sbyuva-toast.show {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  @media (max-width: 900px) {
+    .sbyuva-calendar-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .sbyuva-subscribe-btns {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .sbyuva-reminders-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .sbyuva-calendar-grid {
+      grid-template-columns: 1fr;
+    }
+    .sbyuva-snyp-section {
+      padding: 32px 20px;
+    }
+    .sbyuva-modal-btns {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<div class="sbyuva-snyp-page">
+  <div class="sbyuva-snyp-wrapper">
+    <!-- HERO -->
+    <section class="sbyuva-snyp-hero">
+      <h1 class="sbyuva-snyp-title">
+        Samskritam Network for Young Professionals
+      </h1>
+      <p class="sbyuva-snyp-text">
+        A community for Samskritam lovers beyond campus life.
+        If you're no longer in school but still want to stay connected, this space is for you.
+      </p>
+    </section>
+    <!-- FEATURES -->
+    <section class="sbyuva-snyp-features-section">
+      <div class="sbyuva-snyp-features">
+        <div class="sbyuva-snyp-feature">
+          <strong>Casual</strong>
+          No pressure, no curriculum &mdash; just relaxed engagement
+        </div>
+        <div class="sbyuva-snyp-feature">
+          <strong>Consistent</strong>
+          Meet every 4&ndash;6 weeks to stay connected
+        </div>
+        <div class="sbyuva-snyp-feature">
+          <strong>Community</strong>
+          Stay in touch with others who value Samskritam
+        </div>
+      </div>
+      <div class="sbyuva-snyp-button-wrap">
+        <a href="https://forms.gle/Q5VVAhQhBaez3tDZ7" class="sbyuva-snyp-button">
+          Join our mailing list
+        </a>
+      </div>
+    </section>
+    <!-- CALENDAR -->
+    <section class="sbyuva-snyp-section">
+      <h2 class="sbyuva-snyp-section-title">Meetings Calendar</h2>
+      <p class="sbyuva-snyp-section-subtitle">
+        Stay up-to-date with our monthly gatherings. Join us to practice, converse, and connect.
+      </p>
+      <!-- IMPORTANT NOTICE BANNER -->
+      <div class="sbyuva-calendar-notice">
+        <div class="sbyuva-notice-text">
+          Meeting access links are shared exclusively through our mailing list and are not published publicly. Please <a href="https://forms.gle/Q5VVAhQhBaez3tDZ7">join the mailing list</a> to receive the links for our monthly calls!
+        </div>
+      </div>
+
+      <!-- SUBSCRIBE PANEL -->
+      <div class="sbyuva-subscribe">
+        <div class="sbyuva-subscribe-head">
+          <h3 class="sbyuva-subscribe-title">Subscribe to the SNYP Calendar</h3>
+          <span class="sbyuva-live-pill"><span class="sbyuva-live-dot"></span> Auto-updates</span>
+        </div>
+        <p class="sbyuva-subscribe-text">
+          Subscribe once and every session appears in your calendar. New sessions and changes sync automatically,
+          and you choose your own reminders.
+        </p>
+        <div class="sbyuva-subscribe-btns">
+          <a id="sbyuva-sub-google" class="sbyuva-sub-btn primary" target="_blank" rel="noopener">📅 Google Calendar</a>
+          <a id="sbyuva-sub-apple" class="sbyuva-sub-btn" target="_blank" rel="noopener" title="Subscribe in Apple Calendar (iPhone, iPad, Mac)">🍏 Apple / iPhone</a>
+          <a id="sbyuva-sub-outlook" class="sbyuva-sub-btn" target="_blank" rel="noopener">✉️ Outlook</a>
+          <button id="sbyuva-sub-copy" class="sbyuva-sub-btn" type="button">🔗 Copy link</button>
+        </div>
+        <div id="sbyuva-sub-url" class="sbyuva-sub-url">
+          <input id="sbyuva-sub-url-input" type="text" readonly>
+          <small>Paste this link into any calendar app under "Add calendar &rarr; From URL".</small>
+        </div>
+        <details class="sbyuva-reminders">
+          <summary>How to set your own reminders</summary>
+          <div class="sbyuva-reminders-grid">
+            <div class="sbyuva-reminder-card">
+              <strong>Google Calendar</strong>
+              <ol>
+                <li>On a phone? Subscribe once from a computer &mdash; it then syncs to the Google Calendar app.</li>
+                <li>Find "SNYP" under <em>Other calendars</em>.</li>
+                <li>Click ⋮ &rarr; <em>Settings and sharing</em>.</li>
+                <li>Under <em>Event notifications</em>, add the reminders you want.</li>
+              </ol>
+            </div>
+            <div class="sbyuva-reminder-card">
+              <strong>iPhone / Mac</strong>
+              <ol>
+                <li>Tap <em>Apple / iPhone</em> and confirm <em>Subscribe</em>.</li>
+                <li>iPhone: Settings &rarr; Calendar &rarr; Accounts &rarr; Subscribed Calendars &rarr; SNYP &rarr; turn off <em>Remove Alerts</em>.</li>
+                <li>Mac: Calendar &rarr; Settings &rarr; Alerts.</li>
+              </ol>
+            </div>
+            <div class="sbyuva-reminder-card">
+              <strong>Outlook</strong>
+              <ol>
+                <li>Confirm the subscription when Outlook opens. (Work/school account? <a id="sbyuva-sub-outlook-work" target="_blank" rel="noopener">use this link</a>.)</li>
+                <li>Right-click the SNYP calendar &rarr; <em>Settings</em>.</li>
+                <li>Pick your default reminder time.</li>
+              </ol>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- Cards are generated from sbyuvaEvents in the script below -->
+      <div id="sbyuva-calendar-grid" class="sbyuva-calendar-grid"></div>
+
+      <!-- MAINTAINER PANEL: only visible when the page is opened with #snyp-admin at the end of the URL -->
+      <div id="sbyuva-admin" class="sbyuva-admin">
+        <strong>Maintainer:</strong> after editing <code>sbyuvaEvents</code>, download the feed file and upload it to GitHub
+        (replace <code>snyp-calendar.ics</code>). Subscribers pick up the change automatically.
+        <br><button class="sbyuva-ical-btn" type="button" onclick="downloadFullICS()">⬇ Download snyp-calendar.ics</button>
+        <pre id="sbyuva-admin-status">Checking the live feed&hellip;</pre>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- EVENT DETAIL MODAL overlay -->
+<div id="sbyuva-event-modal" class="sbyuva-modal">
+  <div class="sbyuva-modal-content">
+    <button class="sbyuva-modal-close-btn" onclick="closeEventModal()">&times;</button>
+    <div id="modal-date" class="sbyuva-modal-date">Date</div>
+    <h3 id="modal-title" class="sbyuva-modal-title">Session Name</h3>
+    <p id="modal-desc" class="sbyuva-modal-desc">Description</p>
+
+    <div class="sbyuva-modal-meta-grid">
+      <div class="sbyuva-modal-meta-row">
+        <strong>Time:</strong> <span id="modal-time"></span>
+      </div>
+      <div class="sbyuva-modal-meta-row" id="modal-lead-row">
+        <strong>Facilitator:</strong> <span id="modal-lead"></span>
+      </div>
+    </div>
+    <div class="sbyuva-modal-btns">
+      <a id="modal-google-btn" class="sbyuva-ical-btn" target="_blank" rel="noopener">
+        <span style="font-size: 18px; line-height: 1;">📅</span> Google
+      </a>
+      <button class="sbyuva-ical-btn secondary" onclick="downloadICS()">
+        <span style="font-size: 18px; line-height: 1;">⬇</span> Apple / Outlook (.ics)
+      </button>
+    </div>
+
+    <div class="sbyuva-modal-zoom-tip">
+      Remember, Zoom links are shared only via the <a href="https://forms.gle/Q5VVAhQhBaez3tDZ7" target="_blank" rel="noopener">mailing list</a>!
+    </div>
+  </div>
+</div>
+<div id="sbyuva-toast" class="sbyuva-toast" role="status"></div>
+<div style="text-align:center; margin-top:40px; color:#6B7280; font-size:14px;">
+  &copy; Samskrita Bharati Yuvagana
+</div>
+
+<script>
+  /* ================================================================
+     SETTINGS: edit these
+     ================================================================ */
+
+  // Public Calendar Name
+  const SBYUVA_CALENDAR_NAME = 'SNYP - Samskrita Bharati Yuvagana';
+
+  // Default time for every session (Eastern Time). Any event can override it with start / end / timeText.
+  const SBYUVA_DEFAULT_START = '15:00';
+  const SBYUVA_DEFAULT_END = '15:30';
+  const SBYUVA_DEFAULT_TIME_TEXT = '3:00 – 3:30 PM ET (12:00 – 12:30 PM PT)';
+
+  // To add a session, add one entry. date = YYYY-MM-DD. lead and desc are optional.
+  const sbyuvaEvents = [
+    {
+      date: '2026-10-24',
+      title: 'Share and Tell: Subhāṣitam',
+      lead: 'Vishnupriya P.',
+      desc: 'Bring your favorite subhāṣitam to read and share with the group. Extra points if you can share the tātparyam in simple words!'
+    },
+    {
+      date: '2026-11-21',
+      title: 'Story Reading',
+      lead: 'Sahana C.',
+      desc: 'Our facilitator will bring a story for all of us to take turns reading and discussing together!'
+    },
+    {
+      date: '2026-12-20',
+      title: 'Anvayakramaḥ',
+      lead: 'Siddharth K.',
+      desc: 'Our facilitator will bring selected ślokas and walk through the anvayakramaḥ for each. Feel free to bring your own śloka for the group to work on if time permits!'
+    },
+    {
+      date: '2027-01-16',
+      title: 'Something Special: Saṅkrānti',
+      lead: 'Yashwanth G.',
+      desc: 'Let’s bring a few thoughts and reflections (in Saṃskṛtam) to celebrate and share about Saṅkrānti!'
+    },
+    {
+      date: '2027-02-20',
+      title: 'Member Speaks: Śilpaśāstram',
+      lead: 'Mythreyi R.',
+      desc: 'An engaging member presentation exploring the fascinating world and principles of Śilpaśāstra!'
+    },
+    {
+      date: '2027-03-20',
+      title: 'Sarala-sambhāṣaṇam',
+      lead: 'Naisargi J.',
+      desc: 'Our facilitator will bring an interactive prompt for members to build conversation and dialogue upon.'
+    },
+    {
+      date: '2027-04-17',
+      title: 'Member Speaks: Fitness',
+      lead: 'Samir P.',
+      desc: 'An interactive member presentation and discussion on health, well-being, and fitness in Saṃskṛtam!'
+    },
+    {
+      date: '2027-05-22',
+      title: 'Describe a Movie in Saṃskṛtam',
+      lead: 'TBD',
+      desc: 'Bring a short 4–5 line spoiler-free summary (in Saṃskṛtam) of a favorite movie for other members to guess!'
+    },
+    {
+      date: '2027-06-19',
+      title: 'Story Train',
+      lead: 'Bhairav P.',
+      desc: 'Our facilitator will kick off with an opening prompt. Members will each take turns adding a line to keep the story train rolling forward!'
+    }
+  ];
+
+  /* ================================================================
+     No need to edit below this line
+     ================================================================ */
+
+  const SBYUVA_TZ = 'America/New_York';
+  const SBYUVA_MAILING_LIST = 'https://forms.gle/Q5VVAhQhBaez3tDZ7';
+  // The subscription feed (fixed, never changes). Repo: github.com/appadamofmyeye/sb_yuva_google_sites
+  // This hosted file is what subscribers' calendars read, so re-upload it whenever sbyuvaEvents
+  // changes (open this page with #snyp-admin to download it). File name must be all lowercase.
+  const sbyuvaIcsUrl = 'https://appadamofmyeye.github.io/sb_yuva_google_sites/snyp-calendar.ics';
+  let currentEvent = null;
+
+  function sbyuvaToast(msg) {
+    const t = document.getElementById('sbyuva-toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(sbyuvaToast._t);
+    sbyuvaToast._t = setTimeout(() => t.classList.remove('show'), 3200);
+  }
+
+  function sbyuvaParts(dateStr) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    return { y, m, d, utc: new Date(Date.UTC(y, m - 1, d)) };
+  }
+
+  // "20261024T200000": local Eastern time (paired with ctz / TZID)
+  function sbyuvaStamp(dateStr, timeStr) {
+    return dateStr.replace(/-/g, '') + 'T' + timeStr.replace(':', '') + '00';
+  }
+
+  function sbyuvaEscapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  function sbyuvaEscapeIcs(s) {
+    const BS = String.fromCharCode(92);
+    return String(s).split(BS).join(BS + BS)
+      .split(';').join(BS + ';')
+      .split(',').join(BS + ',')
+      .split(String.fromCharCode(13)).join('')
+      .split(String.fromCharCode(10)).join(BS + 'n');
+  }
+
+  // RFC 5545 line folding: max 75 OCTETS per line. Saṃskṛtam diacritics are 2–3 bytes each,
+  // so we count UTF-8 bytes and never split a character.
+  function sbyuvaFoldLine(line) {
+    const enc = new TextEncoder();
+    const out = [];
+    let cur = '', bytes = 0, limit = 75;
+    for (const ch of line) {
+      const n = enc.encode(ch).length;
+      if (bytes + n > limit) {
+        out.push(cur);
+        cur = ''; bytes = 0; limit = 74; // continuation lines start with a space
+      }
+      cur += ch; bytes += n;
+    }
+    out.push(cur);
+    return out.join(String.fromCharCode(13, 10) + ' ');
+  }
+
+  function sbyuvaDetails(ev) {
+    const LF = String.fromCharCode(10);
+    return (ev.desc ? ev.desc + LF + LF : '') +
+      (ev.lead ? 'Facilitator: ' + ev.lead + LF : '') +
+      'Time: ' + ev.timeText + LF +
+      'Zoom links are shared only via the SNYP mailing list: ' + SBYUVA_MAILING_LIST + LF +
+      'https://yuva.samskritabharatiusa.org/connect/snyp';
+  }
+
+  function sbyuvaSummary(ev) {
+    return 'SNYP: ' + ev.title + (ev.lead && ev.lead !== 'TBD' ? ' (' + ev.lead + ')' : '');
+  }
+
+  function sbyuvaGoogleLink(ev) {
+    return 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+      '&text=' + encodeURIComponent(sbyuvaSummary(ev)) +
+      '&dates=' + sbyuvaStamp(ev.date, ev.start) + '/' + sbyuvaStamp(ev.date, ev.end) +
+      '&ctz=' + encodeURIComponent(SBYUVA_TZ) +
+      '&details=' + encodeURIComponent(sbyuvaDetails(ev)) +
+      '&location=' + encodeURIComponent('Online (Zoom)');
+  }
+
+  // Builds an RFC 5545 calendar. opts.feed = subscription feed (no alarms: subscribers choose their own).
+  function sbyuvaBuildICS(events, opts) {
+    const now = new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    const lines = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Samskrita Bharati USA//SNYP Calendar//EN',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH'
+    ];
+    if (opts.feed) {
+      lines.push(
+        'X-WR-CALNAME:' + sbyuvaEscapeIcs(SBYUVA_CALENDAR_NAME),
+        'X-WR-TIMEZONE:' + SBYUVA_TZ,
+        'X-WR-CALDESC:Samskritam Network for Young Professionals (SNYP) sessions.',
+        // Ask Apple / Outlook to re-check the feed twice a day (Google refreshes on its own schedule)
+        'REFRESH-INTERVAL;VALUE=DURATION:PT12H',
+        'X-PUBLISHED-TTL:PT12H'
+      );
+    }
+    lines.push(
+      'BEGIN:VTIMEZONE',
+      'TZID:America/New_York',
+      'X-LIC-LOCATION:America/New_York',
+      'BEGIN:DAYLIGHT',
+      'TZOFFSETFROM:-0500',
+      'TZOFFSETTO:-0400',
+      'TZNAME:EDT',
+      'DTSTART:19700308T020000',
+      'RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU',
+      'END:DAYLIGHT',
+      'BEGIN:STANDARD',
+      'TZOFFSETFROM:-0400',
+      'TZOFFSETTO:-0500',
+      'TZNAME:EST',
+      'DTSTART:19701101T020000',
+      'RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU',
+      'END:STANDARD',
+      'END:VTIMEZONE'
+    );
+    events.forEach(ev => {
+      const summary = sbyuvaEscapeIcs(sbyuvaSummary(ev));
+      lines.push(
+        'BEGIN:VEVENT',
+        // UID is based on the date: keep it stable so existing subscribers don't get duplicates
+        'UID:snyp-' + ev.date.replace(/-/g, '') + '@sbyuva.org',
+        'DTSTAMP:' + now,
+        'DTSTART;TZID=America/New_York:' + sbyuvaStamp(ev.date, ev.start),
+        'DTEND;TZID=America/New_York:' + sbyuvaStamp(ev.date, ev.end),
+        'SUMMARY:' + summary,
+        'DESCRIPTION:' + sbyuvaEscapeIcs(sbyuvaDetails(ev)),
+        'LOCATION:Online (Zoom)',
+        'URL:https://yuva.samskritabharatiusa.org/connect/snyp',
+        'STATUS:CONFIRMED',
+        'TRANSP:OPAQUE'
+      );
+      if (!opts.feed) {
+        lines.push(
+          'BEGIN:VALARM', 'TRIGGER:-P1D', 'ACTION:DISPLAY',
+          'DESCRIPTION:Reminder: ' + summary + ' is tomorrow',
+          'END:VALARM',
+          'BEGIN:VALARM', 'TRIGGER:-PT1H', 'ACTION:DISPLAY',
+          'DESCRIPTION:Reminder: ' + summary + ' starts in 1 hour',
+          'END:VALARM'
+        );
+      }
+      lines.push('END:VEVENT');
+    });
+    lines.push('END:VCALENDAR');
+    return lines.map(sbyuvaFoldLine).join(String.fromCharCode(13, 10)) + String.fromCharCode(13, 10);
+  }
+
+  function sbyuvaDownload(filename, content) {
+    const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.target = '_self';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+  }
+
+  // Fill in defaults and sort by date
+  sbyuvaEvents.forEach(ev => {
+    ev.start = ev.start || SBYUVA_DEFAULT_START;
+    ev.end = ev.end || SBYUVA_DEFAULT_END;
+    ev.timeText = ev.timeText || SBYUVA_DEFAULT_TIME_TEXT;
+    const p = sbyuvaParts(ev.date);
+    ev.shortDate = p.utc.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+    ev.dateText = p.utc.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+  });
+  sbyuvaEvents.sort((a, b) => a.date.localeCompare(b.date));
+
+  // Build the cards
+  (function renderCards() {
+    const grid = document.getElementById('sbyuva-calendar-grid');
+    const now = new Date();
+    const todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    let nextMarked = false;
+
+    sbyuvaEvents.forEach((ev, i) => {
+      const isPast = ev.date < todayStr;
+      const isNext = !isPast && !nextMarked;
+      if (isNext) nextMarked = true;
+
+      const card = document.createElement('div');
+      card.className = 'sbyuva-calendar-card' + (isPast ? ' is-past' : '') + (isNext ? ' is-next' : '');
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.innerHTML =
+        (isNext ? '<span class="sbyuva-card-badge">Up next</span>' : '') +
+        (isPast ? '<span class="sbyuva-card-badge past">Done</span>' : '') +
+        '<div>' +
+          '<div class="sbyuva-card-date">' + sbyuvaEscapeHtml(ev.shortDate) + '</div>' +
+          '<h3 class="sbyuva-card-title">' + sbyuvaEscapeHtml(ev.title) + '</h3>' +
+          (ev.lead ? '<p class="sbyuva-card-lead">with ' + sbyuvaEscapeHtml(ev.lead) + '</p>' : '<p class="sbyuva-card-lead">&nbsp;</p>') +
+        '</div>' +
+        '<div class="sbyuva-card-click-tip"><span>Details</span> <span>→</span></div>';
+      card.addEventListener('click', () => openEventModal(i, card));
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEventModal(i, card); } });
+      grid.appendChild(card);
+    });
+  })();
+
+  // Maintainer tool: the full feed file to upload to GitHub as snyp-calendar.ics
+  function downloadFullICS() {
+    sbyuvaDownload('snyp-calendar.ics', sbyuvaBuildICS(sbyuvaEvents, { feed: true }));
+    sbyuvaToast('Downloaded snyp-calendar.ics. Upload it to GitHub to update subscribers.');
+  }
+
+  // Subscribe buttons. All of these point at the hosted feed, so calendars stay in sync.
+  (function setupSubscribe() {
+    const webcalUrl = sbyuvaIcsUrl.replace(/^https?:/, 'webcal:');
+
+    document.getElementById('sbyuva-sub-google').href =
+      'https://calendar.google.com/calendar/render?cid=' + encodeURIComponent(webcalUrl);
+
+    // Apple: webcal:// opens Calendar's "Subscribe" prompt on iPhone, iPad and Mac
+    document.getElementById('sbyuva-sub-apple').href = webcalUrl;
+
+    const outlookQuery = '?url=' + encodeURIComponent(sbyuvaIcsUrl) + '&name=' + encodeURIComponent(SBYUVA_CALENDAR_NAME);
+    document.getElementById('sbyuva-sub-outlook').href = 'https://outlook.live.com/calendar/0/addfromweb' + outlookQuery;
+    document.getElementById('sbyuva-sub-outlook-work').href = 'https://outlook.office.com/calendar/0/addfromweb' + outlookQuery;
+
+    document.getElementById('sbyuva-sub-url-input').value = sbyuvaIcsUrl;
+
+    // Google Sites embeds may block clipboard access, so also show the link for manual copying
+    document.getElementById('sbyuva-sub-copy').addEventListener('click', () => {
+      const box = document.getElementById('sbyuva-sub-url');
+      const input = document.getElementById('sbyuva-sub-url-input');
+      box.classList.add('show');
+      input.focus();
+      input.select();
+      const done = () => sbyuvaToast('Calendar feed link copied!');
+      const fallback = () => {
+        try { if (document.execCommand('copy')) { done(); return; } } catch (e) {}
+        sbyuvaToast('Select the link below and copy it');
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(sbyuvaIcsUrl).then(done, fallback);
+      } else {
+        fallback();
+      }
+    });
+  })();
+
+  // Maintainer panel: open the page with #snyp-admin to see it. Compares the live feed with sbyuvaEvents.
+  (function setupAdmin() {
+    if (!/snyp-admin/.test(location.hash + location.search)) return;
+    document.getElementById('sbyuva-admin').classList.add('show');
+    const status = document.getElementById('sbyuva-admin-status');
+    fetch(sbyuvaIcsUrl + '?t=' + Date.now(), { cache: 'no-store' })
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+      .then(txt => {
+        const unfolded = txt.replace(/\r?\n[ \t]/g, '');
+        const live = (unfolded.match(/^DTSTART;TZID=America\/New_York:\d{8}T\d{4}/gm) || [])
+          .map(s => s.slice(-13)).sort();
+        const page = sbyuvaEvents.map(ev => sbyuvaStamp(ev.date, ev.start).slice(0, 13)).sort();
+        const missing = page.filter(x => !live.includes(x));
+        const extra = live.filter(x => !page.includes(x));
+        status.textContent = (missing.length || extra.length)
+          ? '⚠ Live feed is OUT OF DATE.\nOn this page but not in feed: ' + (missing.join(', ') || 'none') +
+            '\nIn feed but not on this page: ' + (extra.join(', ') || 'none') +
+            '\n(Titles/descriptions are not compared — re-upload after any edit.)'
+          : '✓ Live feed has the same ' + live.length + ' session dates/times as this page.\n(Titles/descriptions are not compared — re-upload after any edit.)';
+      })
+      .catch(err => { status.textContent = 'Could not read the live feed (' + err.message + ').'; });
+  })();
+
+  function openEventModal(index, cardEl) {
+    const event = sbyuvaEvents[index];
+    currentEvent = event;
+
+    document.getElementById('modal-date').innerText = event.dateText;
+    document.getElementById('modal-title').innerText = event.title;
+    const descEl = document.getElementById('modal-desc');
+    descEl.innerText = event.desc || '';
+    descEl.style.display = event.desc ? '' : 'none';
+    document.getElementById('modal-time').innerText = event.timeText;
+    document.getElementById('modal-lead').innerText = event.lead || '';
+    document.getElementById('modal-lead-row').style.display = event.lead ? '' : 'none';
+    document.getElementById('modal-google-btn').href = sbyuvaGoogleLink(event);
+
+    // Google Sites puts this page in an iframe that can be much taller than the screen, so a
+    // vertically-centred popup can open out of view. Open it next to the clicked card instead.
+    const modal = document.getElementById('sbyuva-event-modal');
+    const content = modal.querySelector('.sbyuva-modal-content');
+    modal.style.height = '0px';
+    const docH = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    modal.style.height = docH + 'px';
+    const r = cardEl ? cardEl.getBoundingClientRect() : { top: 40, height: 0 };
+    const cardMid = r.top + window.scrollY + r.height / 2;
+    const top = Math.max(20, Math.min(cardMid - content.offsetHeight / 2, docH - content.offsetHeight - 20));
+    content.style.marginTop = top + 'px';
+
+    modal.classList.add('active');
+    // If the popup still pokes past the edge of the screen, scroll the outer page to it
+    try { content.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {}
+  }
+
+  function closeEventModal() {
+    document.getElementById('sbyuva-event-modal').classList.remove('active');
+    currentEvent = null;
+  }
+
+  // Single-session .ics (one-time import, includes 1-day and 1-hour reminders)
+  function downloadICS() {
+    if (!currentEvent) return;
+    const ev = currentEvent;
+    sbyuvaDownload('SNYP_' + ev.title.replace(/[^a-z0-9]+/gi, '_') + '.ics', sbyuvaBuildICS([ev], { feed: false }));
+    sbyuvaToast('Downloaded session invite! Open it to add to your calendar.');
+  }
+
+  // Close modal on click outside content, or with Escape
+  window.addEventListener('click', function (event) {
+    if (event.target === document.getElementById('sbyuva-event-modal')) closeEventModal();
+  });
+  window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeEventModal();
+  });
+</script>
