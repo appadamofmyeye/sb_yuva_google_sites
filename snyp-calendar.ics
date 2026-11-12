@@ -43,10 +43,10 @@ STATUS:CONFIRMED
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:snyp-20261121@sbyuva.org
+UID:snyp-20261114@sbyuva.org
 DTSTAMP:20261112T160152Z
-DTSTART;TZID=America/New_York:20261121T150000
-DTEND;TZID=America/New_York:20261121T153000
+DTSTART;TZID=America/New_York:20261114T150000
+DTEND;TZID=America/New_York:20261114T153000
 SUMMARY:SNYP: Story Reading (Sahana C.)
 DESCRIPTION:Our facilitator will bring a story for all of us to take turns 
  reading and discussing together!\n\nFacilitator: Sahana C.\nTime: 3:00 –
